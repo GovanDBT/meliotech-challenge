@@ -1,6 +1,7 @@
 # React Image Carousel App
 
 This is a brief introduction to the image carousel app. This app was built as a challenge by Meliotech where I was expected to build a dynamic carousel that would allow users to upload images of their products using React.
+![Screenshot 2025-04-06 at 13 01 26](https://github.com/user-attachments/assets/4c30c536-850e-4386-8253-d4c389dbe331)
 
 ## Tech Stack
 * React 18 + Vite (Framework)
