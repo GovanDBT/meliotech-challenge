@@ -29,7 +29,8 @@ const Product = () => {
   };
 
   return (
-    <div className="container mx-auto flex flex-col space-y-5 items-center place-content-center h-dvh">
+    <div className="container mx-auto flex flex-col space-y-8 items-center place-content-center h-vh mt-8">
+      <h1 className="text-3xl font-bold">Add Image to Carousel</h1>
       <div className="carousel w-fit ">
         {sliders.map((slider, index) => (
           <div
