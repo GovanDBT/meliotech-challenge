@@ -1,4 +1,5 @@
 import { ChangeEvent, useState } from "react";
+import { IoCloudUploadSharp } from "react-icons/io5";
 
 interface ModalProps {
   addImage: (imageUrl: string) => void;
@@ -23,9 +24,9 @@ const Modal = ({ addImage }: ModalProps) => {
   };
 
   return (
-    <>
+    <div>
       <button
-        className="btn"
+        className="btn btn-primary"
         onClick={() =>
           (
             document.getElementById("image_modal") as HTMLDialogElement
@@ -41,21 +42,36 @@ const Modal = ({ addImage }: ModalProps) => {
               ✕
             </button>
           </form>
-          <h3 className="font-bold text-lg">Upload File</h3>
-          {file && (
-            <img src={URL.createObjectURL(file)} alt="Uploaded file preview" />
-          )}
-          <input
-            type="file"
-            className="file-input"
-            onChange={handleFileChange}
-          />
-          <button type="button" onClick={handleSubmit} className="btn">
-            Submit Image
-          </button>
+          <h3 className="font-bold text-lg mb-3">Upload Image</h3>
+          <div className="flex flex-col space-y-5">
+            <div className="flex flex-col items-center space-y-2">
+              {!file && (
+                <IoCloudUploadSharp size={60} className="opacity-30 mb-4" />
+              )}
+              {file && (
+                <img
+                  className="rounded-xl"
+                  src={URL.createObjectURL(file)}
+                  alt="Uploaded file preview"
+                />
+              )}
+              <input
+                type="file"
+                className="file-input btn-primary"
+                onChange={handleFileChange}
+              />
+            </div>
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="btn btn-primary"
+            >
+              Submit Image
+            </button>
+          </div>
         </div>
       </dialog>
-    </>
+    </div>
   );
 };
 
